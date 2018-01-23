@@ -1,0 +1,31 @@
+A SMALL REPORT ABOUT THE FIRST LAB SESSION OF UNIX
+
+x -to delete the unwanted char
+u -to undo  the last command
+U -to undo the whole line
+ctrl-R -to redo
+A -to append to the end the text
+:wq -to save & exit
+:ql -to trash all changes
+dw -to move the cursor to the beginning of the word to delete that word
+2w -to move the cursor two words forward
+3e -to move the cursor to the end of the third word
+0 -to move to start of the  line
+d2w-which deletes the  two words
+dd-to delete the line
+2dd-to delete 2 words
+p-puts delete text after the cursor
+r- to replace the letter
+ce-to delete the word and place you in insert word
+G-to move you bottom of the file
+gg-to move you to the starting of the file
+%-to find the match
+:s/old/new/g-to subtitute new one for old
+/-backward search
+R-enters replace mode until <esc> is pressed
+ctrl w-to jump from  one window to another
+%-to find a matching
+a-inserts text after the cursor
+yw-yanks one word
+e-command moves to the end of the word
+
