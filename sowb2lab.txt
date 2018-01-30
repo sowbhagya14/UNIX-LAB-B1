@@ -1,0 +1,39 @@
+From this lab session2 i have learnt the execution or the working of the commands
+few of the commands which i have tested in this lab are listed below:
+1.ls -l
+2.who -u
+3.ls -a
+4.ls -f
+4.cal
+5.uname
+6.time
+7.date
+8.bc
+9.LS
+10.LS -a
+11.LS -b
+12.who -u
+13.ls -d
+14.ls -l
+15.man LS
+16.-a,--all
+17.-b,--boot
+time of last system boot
+18.-d,--dead
+print dead processes
+19.-H,--heading
+print line of column heading
+20.--ips 
+print ips instead of hostnames with --lookup
+21.-l,--login
+prints system login processes
+22.--lookup
+attempt to canonicalize hostnames via DNS
+23.-m,--process
+print active processes spawned by init
+24.-q,--count
+all logic names and number of users logged on
+25.-r,--runlevel
+prints current runlevel
+26.-s,--short
+print only name,line and time
