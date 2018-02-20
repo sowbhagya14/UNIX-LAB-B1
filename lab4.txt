@@ -1,0 +1,76 @@
+from the lab session 4 i have learnt few things which are listed below as follows: 
+
+To start off with shell script first type vim filename.sh
+Again type sh.filename.sh(show command)
+
+
+
+1) A shell script to print only date and time 
+	In insert mode type the command date +"%D %T" to print both date and time ,then save and exit with :wq
+	Now use the show command 
+	//02/06/18 14:55:03
+2)Write a shell script to check whether a number is positive or negative 
+	In insert mode type the following program, then save and quit with :wq
+	
+	echo "enter a number"
+        read n
+	if test $n-gt 0
+	then
+  		  echo "number is positive"
+	else
+      		  echo "number is negative"
+	fi
+	Now use the show command 
+	//enter a number
+	2
+	abcde.sh: 3: test: 2-gt: unexpected operator
+	number is negative
+	//enter a number
+	1
+	abcde.sh: 3: test: 1-gt: unexpected operator
+	number is negative
+3)Write a shell script to print the students grade[above 90-A,80-B,70-C,60-D else FAIL]
+	In insert mode type the following program, then save and quit with :wq
+	
+	echo " enter your marks"
+	read n
+	if [ "$n" -ge 90 ]
+	then
+        	echo " you got A"
+	elif [ "$n" -ge 80 ]
+	then
+                echo " you got B"
+        elif [ "$n" -ge 70 ]
+        then
+                        echo " you got C"
+                elif [ "$n" -ge 60]
+                then
+                                echo "you got D"
+                        else
+                                        echo "you are failed"
+                                fi
+	Now use the show command 
+	//enter your marks
+	67
+	abcdef.sh: 12: [: missing ]
+	you are failed
+	// enter your marks
+	89
+ 	you got B
+1)To display 3rd column of file without printing the header cgpa also sort the same 
+	$cut|grep -v cgpa|sort -g
+
+2)Display only current time using date command 
+	$date +%T
+3)Use uniq with all possible options 
+	$uniq -c CSEB1_2.csv
+4)print number of lines for ls-l command 
+	$ls -l|wc -l
+5)Display USN from 7-14 along with other fields 
+	 $tail -n 8 CSE.csv
+6)To sort only name field from CSEB1_2.csv 
+	$cut -d , -f 2 CSEB1_2.csv|sort 
+
+	
+	
+
