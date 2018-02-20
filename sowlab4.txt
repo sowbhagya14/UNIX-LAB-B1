@@ -1,0 +1,42 @@
+from the lab session 5 i have learnt the execution of the following 
+programs:
+
+(1)To write a program to display or print the sequence of numbers from 1 to 10
+The shell script code would be:
+
+code: echo "enter a number"
+      read n
+      for((i=1;i<=10;i++))
+      do
+       echo "$i"
+      done
+output of the above code would be:
+      enter a number
+      10
+      1
+      2
+      3
+      4
+      5
+      6
+      7
+      8
+      9
+      10
+       
+(2)To write a program to check whether the number is prime or not:
+
+code: echo "enter a number"
+      read numb
+      i=2
+      while[ $i lt $numb]
+      do
+      if[expr $numb % $i eq 0]
+      then
+      echo "$numb is not a prime number"
+      echo "since it is not divisible by $i"
+      exit from the loop
+      fi
+      i=expr $i+1
+      done
+      echo "$num is a prime number"
