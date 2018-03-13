@@ -1,0 +1,33 @@
+From the lab session -7
+
+    "USN number,Name,Reg. No"
+1,Ajay,160
+2,Benny,162
+3,Carolin,164
+4,Danny,160
+5,Elijah,168
+6,Farooqi,170
+7,Genny,172
+8,Harry,174
+9,Enam,176
+10,John,178
+11,kathy,180
+12,sunnyster,182
+13,maani,184
+14,mani,186
+15,nisha,188
+
+
+
+  emp_id|Name|Designation|Salary|Phone_number
+160|Ajay|Manager|70000|9203451209
+162|Benny|staff|59000|8892396232
+164|Carolin|Head_staff|50000|9845367130
+166|Danny|Director|80000|7856029121
+168|Elijah|manager|70000|9206678099
+170|Farooqi|Director|80000|7856463902
+178|Genny|Staff|60000|9934560287
+190|Hari|Staff|60000|8894589012
+178|Jai|Staff|59000|7890452316
+190|nisha|Staff|60000|9873510342
+
