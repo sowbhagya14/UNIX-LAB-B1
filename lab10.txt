@@ -1,122 +1,85 @@
-From the lab session9 
-Question 1. Write an awk command to delete all the blank lines from a files.
+From the lab session 10 we have learnt:
+Cop()
+{
+        echo "Enter filename"
+        read f1
+        echo "Enter destination"
+        read f2
+        if [ -f $f1 -a -f $f2 ]
+         then cp $f1 $f2
 
-$ cat sample.txt
-How are you?
-this is unix sample file
+ else
+         echo "file doesn't exist"
+ fi
+ }
+
+Remov()
+{
+        echo "enter the filename you want to remove"
+        read f
+        if [ -f $f ]
+        then
+                rm $f
+        fi
+}
+Renam()
+{
+        echo "Enter filename"
+        read f1
+        echo "Enter the name that you wish to change to"
+        read f2
+        mv $f1 $f2
+}
+Compar()
+{
+        echo "enter filename 1"
+        read f1
+        echo "enter filename 2"
+        read f2
+        if [ -f $f1 -a -f $f2 ]
+        then
+                cmp $f1 $f2
+fi
+}
+Differenc()
+{
+         echo "enter filename 1"
+         read f1
+         echo "enter filename 2"
+         read f2
+         if [ -f $f1 -a -f $f2 ]
+         then
+                 diff $f1 $f2
+         fi
+ }
+
+echo "MENU FOR FILE OPERATIONS"
+PS3='please select one of these'
+filee='copy Rename Remove Compare Difference exit'
+select file in $filee
+do
+ if [ $file == copy ]
+then
+ Cop                                //function call
+fi
+ if [ $file == Rename ]
+then 
+Renam                              //function call
+fi
+if [ $file == Remove]
+then
+ Remov                              //function call
+fi
+if [ $file == Compare ]
+then
+ Compar                             //function call
+fi
+if [ $file == Difference ]
+then
+ Differenc                          //function call
+fi
+if [ $file == Exit ]
+then break
+done
 
 
-
-
-
-
-how
-
-$ awk 'NF' sample.txt
-How are you?
-this is unix sample file
-how
------------------------------------------------------------------------------
-
-Question 2. Print only the odd numbers of a file
-
-$ awk 'NR%2==1' emp.lst 
-
-23293|john|manager|accounts|12/02/98|45000
-37480|janny|manager|marketing|18/09/90|90000
-34793|johnny|director|sales|16/09/10|438734
-1001|jolly|Manager|70000|9203451209
-1003|jenny|Head_staff|50000|9845367130
-1005|jerry|manager|70000|9206678099
-1007|jurry|Staff|60000|9934560287
-1009|jelly|Staff|59000|7890452316
-----------------------------------------------------------------------------
-
-Question 3. Write an awk command to print the last field without knowing the number of fields of a file
-
-
-$ awk -F "|" '{print $NF}' emp.lst
-
-45000
-67000
-90000
-43874
-438734
-Phone_number
-9203451209
-8892396232
-9845367130
-7856029121
-9206678099
-7856463902
-9934560287
-8894589012
-7890452316
-9873510342
-----------------------------------------------------------------------------
-
-Question 4. write the equivalent awk command for "head -n 5 filename"
-
-$ head -n 5 emp.lst
-
-23293|john|manager|accounts|12/02/98|45000
-27367|johnny|director|sales|13/08/56|67000
-37480|jolly|manager|marketing|18/09/90|90000
-76483|jurry|CEO|marketing|24/07/80|43874
-34793|jelly|director|sales|16/09/10|438734
-
-$ awk -F "|" 'NR==1,NR==5{print $0}' emp.lst
-
-23293|john|manager|accounts|12/02/98|45000
-27367|johnny|director|sales|13/08/56|67000
-37480|jolly|manager|marketing|18/09/90|90000
-76483|jurry|CEO|marketing|24/07/80|43874
-34793|jelly|director|sales|16/09/10|438734
-----------------------------------------------------------------------------
-
-Question 5. write the equivalent awk command for "sed -n '5,10p' filename"
-
-$ sed -n '5,10p' emp.lst
-
-34793|john|director|sales|16/09/10|438734
-emp_id|Name|Designation|Salary|Phone_number
-1001|arun|Manager|70000|9203451209
-1002|Benny|staff|59000|8892396232
-1003|Cenny|Head_staff|50000|9845367130
-1004|Derick|Director|80000|7856029121
-
-$ awk -F "|" 'NR==5,NR==10{print $0}' emp.lst
-
-34793john|director|sales|16/09/10|438734
-emp_id|Name|Designation|Salary|Phone_number
-1001|arun|Manager|70000|9203451209
-1002|Benny|staff|59000|8892396232
-1003|cenny|Head_staff|50000|9845367130
-------------------------------------------------------------------------------
-
-Question 6. write the equivalent awk command for "tail +7 filename"
-$ tail +7 emp.lst
-
-1001|john|Manager|70000|9203451209
-1002|jolly|staff|59000|8892396232
-1003|jaanu|Head_staff|50000|9845367130
-1004|jenny|Director|80000|7856029121
-1005|jurry|manager|70000|9206678099
-1006|jelly|Director|80000|7856463902
-1007|jollllly|Staff|60000|9934560287
-1008|jaanu|Staff|60000|8894589012
-1009|jack|Staff|59000|7890452316
-1010|jackie|Staff|60000|9873510342
-
-$ awk -F "|" 'NR==7,NR==$NF{print $0}' emp.lst
-
-1001|john|Manager|70000|9203451209
-1002|jolly|staff|59000|8892396232
-1003|jurry|Head_staff|50000|9845367130
-1004|jelly|Director|80000|7856029121
-1005|jannu|manager|70000|9206678099
-1006|jack|Director|80000|7856463902
-1007|jackie|Staff|60000|9934560287
-1008|jackle|Staff|60000|8894589012
-1009|jacklin|Staff|59000|7890452316
-1010|jannu|Staff|60000|9873510342
