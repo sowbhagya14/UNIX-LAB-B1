@@ -1,0 +1,14 @@
+From lab 11 we have learnt :
+*To view or display the message
+      $ dialog --title "hello" --msgbox "Hi" 10 20
+*To show the yes or no text     
+      $ dialog --title "Hello" --yesno "happy" 10 20
+*To show a message "hello"      
+      $ dialog --title "Hello" --infobox "happy" 10 20;wake up  5
+*To show the colours      
+      $ dialog --title "Hello" --menu "Enter the option" 10 20 3 1 red, 2 green, 3 blue
+*To indicate the correct colour      
+      $ dialog --title "Hello" --checklist "tick the list" 10 20 3 1 red on, 2 green off, 3 blue on
+
+
+
