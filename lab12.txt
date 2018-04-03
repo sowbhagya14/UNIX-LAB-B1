@@ -1,0 +1,65 @@
+From lab session 12 
+echo "menu"
+echo "1.copy a file"
+echo "2. Remove a file"
+echo "3. move a file "
+echo "4. difference of two files "
+echo "5. exit  "
+echo "enter your choice \c"
+read choice
+case $choice in
+	1) echo"enter the file name to copy \c"
+		read f1
+		echo"enter file name \c"
+		read f2
+		if[ -f $f1]
+		then
+		cp $f1 $f2
+	else
+		echo "$f1 does nit exist"
+	fi
+	;;	
+	
+	
+2) echo "enter the file to be removed \c"
+	read r1
+	if [ -f $r1 ]
+	then
+		rm -i $r1
+	else "$r1 file does not exist \c"
+	fi
+	;;
+3) 
+	echo "enter the file name to move \c"
+	read f1
+	echo"enter destination \c"
+	read f2
+	if [ -f $f1 && -d $f2 ]
+		then
+			mv $f1 $f2
+		
+	else
+		echo "$f1 does not exist"
+	fi
+
+	;;
+4)
+	echo "enter the file name to find difference of two files \c"
+	        read f1 , f2
+		       
+if [ -f $f1 ]
+then
+	diff $f1 $f2
+
+else
+	echo"$f1 $f2 has no difference"
+fi
+;;
+
+5)
+	echo "exit...."
+       exit
+       ;;
+esac       
+
+
